@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName">
+    		<value>com.mysql.jdbc.Driver</value>
+    	</property>
+    	<property name="url">
+    		<value>jdbc:mysql://localhost:3306/his_mz_db?useUnicode=true&amp;characterEncoding=UTF-8</value>
+    	</property>
+    	<property name="username">
+    		<value>root</value>
+    	</property>
+    	<property name="password">
+    		<value>admin</value>
+    	</property>
+	</bean>
+	
+	<!-- 基本的BaseJdbcDao配置，设置DataSource来获取JdbcTemplate实例-->
+	<bean id="springJdbcDs" class="com.jujie.global.dao.BaseJdbcDao">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+</beans>

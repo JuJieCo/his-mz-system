@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="changepriceBillDao" parent="springJdbcDs" class="com.jujie.his.inventory.dao.HisChangepriceBillDaoImpl" />
+	<bean id="changepriceDetailDao" parent="springJdbcDs" class="com.jujie.his.inventory.dao.HisChangepriceDetailDaoImpl" />
+	<bean id="inventoryBillDao" parent="springJdbcDs" class="com.jujie.his.inventory.dao.HisInventoryBillDaoImpl" />
+	<bean id="inventoryHistoryDao" parent="springJdbcDs" class="com.jujie.his.inventory.dao.HisInventoryHistoryDaoImpl" />
+	<bean id="medicinalDao" parent="springJdbcDs" class="com.jujie.his.inventory.dao.HisMedicinalInventoryDaoImpl" />
+	<bean id="changepriceBillServer" class="com.jujie.his.inventory.server.ChangepriceBillServer" >
+		<property name="changepriceBillDao" ref="changepriceBillDao"></property>
+		<property name="changepriceDetailDao" ref="changepriceDetailDao"></property>
+	</bean>
+	<bean id="changepriceDetailServer" class="com.jujie.his.inventory.server.ChangepriceDetailServer" >
+		<property name="changepriceDetailDao" ref="changepriceDetailDao"></property>
+	</bean>
+	<bean id="inventoryBillServer" class="com.jujie.his.inventory.server.InventoryBillServer" >
+		<property name="inventoryBillDao" ref="inventoryBillDao"></property>
+		<property name="inventoryHistoryDao" ref="inventoryHistoryDao"></property>
+		<property name="medicinalDao" ref="medicinalDao"></property>
+	</bean>
+	<bean id="inventoryHistoryServer" class="com.jujie.his.inventory.server.InventoryHistoryServer" >
+		<property name="inventoryHistoryDao" ref="inventoryHistoryDao"></property>
+	</bean>
+	<bean id="medicinalInventoryServer" class="com.jujie.his.inventory.server.MedicinalInventoryServer" >
+		<property name="medicinalDao" ref="medicinalDao"></property>
+		<property name="mzChargeDaoImpl" ref="mzChargeDaoImpl"></property>
+	</bean>
+</beans>

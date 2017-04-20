@@ -1,0 +1,19 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+     <package name="guahaoPackage" namespace="/guahao" extends="struts-global">  
+     
+        <action name="ghsitAction" class="com.jujie.his.guahao.action.GHSitAction">
+        	<result name="ghsit">/his/guahao/ghsit.jsp</result>
+        </action>
+        
+       <action name="ghorderAction" class="com.jujie.his.guahao.action.GHOrderAction">
+        	<result name="ghorder">/his/guahao/ghorder.jsp</result>
+        </action>
+     </package>
+     
+</struts>
+
+

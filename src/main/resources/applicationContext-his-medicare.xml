@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="citizenMedDAOImpl" parent="springJdbcDs" class="com.jujie.his.medicare.dao.CitizenMedDAOImpl" />
+	
+	<bean id="medicareServer" class="com.jujie.his.medicare.server.MedicareServerImpl" >
+		<property name="citizenMedDAOImpl" ref="citizenMedDAOImpl"></property>
+	</bean>
+	
+	<bean id="universityMedDAOImpl" parent="springJdbcDs" class="com.jujie.his.medicare.dao.UniversityMedDAOImpl" />
+	
+	<bean id="universityMedServer" class="com.jujie.his.medicare.server.UniversityMedServerImpl" >
+		<property name="universityMedDAOImpl" ref="universityMedDAOImpl"></property>
+	</bean>
+</beans>

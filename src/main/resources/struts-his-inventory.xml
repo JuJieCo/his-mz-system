@@ -1,0 +1,23 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+     <package name="inventoryPackage" namespace="/inventory" extends="struts-global">  
+        <action name="inventoryAction" class="com.jujie.his.inventory.action.InventoryAction">
+        	<result name="into">/his/inventory/inventory_into.jsp</result>
+        	<result name="outto">/his/inventory/inventory_outto.jsp</result>
+        	<result name="tack">/his/inventory/inventory_housetack.jsp</result>
+        	<result name="back">/his/inventory/inventory_houseback.jsp</result>
+        	<result name="dotack">/his/inventory/inventory_dotack.jsp</result>
+        	<result name="doback">/his/inventory/inventory_doback.jsp</result>
+        	<result name="checkyk">/his/inventory/inventory_check.jsp</result>
+        	<result name="checkyf">/his/inventory/inventory_housecheck.jsp</result>
+        	<result name="changeprice">/his/inventory/inventory_changeprice.jsp</result>
+        	<result name="ypff">/his/mz/inventory_fy.jsp</result>
+        </action>
+     </package>
+     
+</struts>
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="mzChargeDaoImpl" parent="springJdbcDs" class="com.jujie.his.mz.dao.MzChargeDaoImpl" />
+		<bean id="mzZlDaoImpl" parent="springJdbcDs" class="com.jujie.his.mz.dao.MzZlDaoImpl" />
+	<bean id="mzChargeServerImpl" class="com.jujie.his.mz.server.MzChargeServerImpl" >
+	  <property name="mzChargeDaoImpl" ref="mzChargeDaoImpl"></property>
+	</bean>
+	<bean id="mzZlServerImpl" class="com.jujie.his.mz.server.MzZlServerImpl" >
+	  <property name="mzZlDaoImpl" ref="mzZlDaoImpl"></property>
+	</bean>
+</beans>

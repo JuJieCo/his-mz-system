@@ -1,0 +1,33 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-default.xml" />
+	<constant name="struts.objectFactory" value="spring" />
+  	<bean type="com.opensymphony.xwork2.ObjectFactory" name="spring"
+		class="org.apache.struts2.spring.StrutsSpringObjectFactory" /> 
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant> 
+
+	<include file="struts-global.xml"></include>
+	<include file="struts-user.xml"></include>
+	<include file="struts-login.xml"></include>
+	<include file="struts-logger.xml"></include>
+	<include file="struts-his-baseinfo.xml"></include>
+	<include file="struts-his-inventory.xml"></include>
+	<!-- 门诊 -->
+	<include file="struts-mz.xml"></include>
+		<!-- 挂号-->
+	<include file="struts-his-guahao.xml"></include>
+		<!-- 查询 -->
+	<include file="struts-his-record.xml"></include>
+		<!-- 医保 -->
+	<include file="struts-his-medicare.xml"></include>
+	<include file="struts-report.xml"></include>
+	
+	<package name="jasperreports-default" extends="struts-default">
+    	<result-types>
+    		<result-type name="jasper" class="org.apache.struts2.views.jasperreports.JasperReportsResult"/>
+    	</result-types>
+    </package>
+</struts>

@@ -1,0 +1,28 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+     <package name="medicarePackage" namespace="/medicare" extends="struts-global">  
+     
+         <action name="citizenMedAction" class="com.jujie.his.medicare.action.CitizenMedAction">
+        	<result name="showEdit">/his/medicare/citizen_edit.jsp</result>
+        	<result name="showList">/his/medicare/citizen_list.jsp</result>
+        	<result name="showDESHD">/his/medicare/citizen_shd.jsp</result>
+        	<result name="showEDJSB">/his/medicare/citizen_jsb.jsp</result>
+        	<result name="showED204">/his/medicare/citizen_204.jsp</result>
+        	<result name="showED205">/his/medicare/citizen_205.jsp</result>
+        </action>
+        
+        <action name="universityMedAction" class="com.jujie.his.medicare.action.UniversityMedAction">
+        	<result name="mznotclist">/his/medicare/mznotc_list.jsp</result>
+        	<result name="cklist">/his/medicare/ck_list.jsp</result>
+        	<result name="show">/his/medicare/unyb_edit.jsp</result>
+        	<result name="unybtotal">/his/medicare/unybtotal_edit.jsp</result>
+        </action>
+
+     </package>
+     
+</struts>
+
+

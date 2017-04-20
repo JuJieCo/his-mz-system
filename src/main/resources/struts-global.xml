@@ -1,0 +1,55 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="struts-global-non" extends="struts-default"> 
+		<interceptors>
+			<interceptor class="com.jujie.global.web.EncodeInterceptor" name="encode"/>
+			<interceptor class="com.jujie.global.web.LoggerInterceptor" name="logger"/>
+			<interceptor-stack name="mydefault">
+				<!--配置内建默认拦截器-->
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="token">
+					<param name="excludeMethods">getVailteCode,logout,editPwd,checkName</param>
+				</interceptor-ref>
+				<!--配置自定义的拦截器-->
+				<interceptor-ref name="encode"/>
+			<!-- 	<interceptor-ref name="logger"/>   -->
+			</interceptor-stack>
+		</interceptors> 
+		<default-interceptor-ref name="mydefault" />
+		
+		<global-results>
+			<result name="login">/index_proxy.jsp</result>
+			<result name="invalid.token">/error.jsp</result>
+		</global-results>
+     </package>
+     
+     <package name="struts-global" extends="struts-default"> 
+		<interceptors>
+			<interceptor class="com.jujie.global.web.AuthorityInterceptor" name="authority"/>
+			<interceptor class="com.jujie.global.web.EncodeInterceptor" name="encode"/>
+			<interceptor class="com.jujie.global.web.LoggerInterceptor" name="logger"/>
+			<interceptor-stack name="mydefault">
+				<!--配置内建默认拦截器-->
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="token">
+					<param name="excludeMethods">query*,show*,update*,delete*,execute,editAjaxData,toAuthorUser,multipleQueryCustomerInfoList,change*,exchange*,down*,list*,json*,get*,check*,do*,export*</param>
+				</interceptor-ref>
+				<!--配置自定义的拦截器-->
+			<!-- 	<interceptor-ref name="authority"/>  -->
+				<interceptor-ref name="encode"/>
+		<!-- 		<interceptor-ref name="logger"/>  -->
+			</interceptor-stack>
+		</interceptors> 
+		<default-interceptor-ref name="mydefault" />
+		<!--定义全局Result-->
+		<global-results>
+			<result name="login">/index_proxy.jsp</result>
+			<result name="invalid.token">/error.jsp</result>
+		</global-results>
+     </package>
+     
+</struts>
+
+

@@ -1,0 +1,106 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+     
+     <!-- 报表演示 -->
+    <package name="reportPackage" namespace="/reports" extends="jasperreports-default">
+        <action name="toCitizenMedDESHDpdf" class="com.jujie.his.medicare.action.CitizenMedAction">
+            <result name="success" type="jasper">
+                <param name="location">/Jasper/jumin001.jasper</param>
+                <param name="dataSource">citizenMedpdfList</param>
+                <param name="format">PDF</param>
+            </result>
+        </action>
+       
+        <action name="toCitizenMedDEJSBpdf" class="com.jujie.his.medicare.action.CitizenMedAction">
+            <result name="success" type="jasper">
+                <param name="location">/Jasper/jumin002.jasper</param>
+                <param name="dataSource">citizenMedpdfList</param>
+                <param name="format">PDF</param>
+            </result>
+        </action>
+        
+        <action name="toCitizenMedDE205pdf" class="com.jujie.his.medicare.action.CitizenMedAction">
+            <result name="success" type="jasper">
+                <param name="location">/Jasper/205.jasper</param>
+                <param name="dataSource">citizenMed205pdfList</param>
+                <param name="format">PDF</param>
+            </result>
+        </action>
+        
+        <action name="toUntJSpdf" class="com.jujie.his.medicare.action.UniversityMedAction">
+            <result name="success" type="jasper">
+                <param name="location">/Jasper/SJieSuanBiao.jasper</param>
+                <param name="dataSource">universityMedDEList</param>
+                <param name="format">PDF</param>
+            </result>
+        </action>
+        
+        <action name="toUntTotalpdf" class="com.jujie.his.medicare.action.UniversityMedAction">
+            <result name="success" type="jasper">
+                <param name="location">/Jasper/SHuiZongBiao.jasper</param>
+                <param name="dataSource">universityMedTotalList</param>
+                <param name="format">PDF</param>
+            </result>
+        </action>
+        
+        
+                 <!-- 打印票据 -->
+        <action name="toPrintpdf" class="com.jujie.global.action.PrintReportAction">
+            <result name="success" type="jasper">
+                <param name="location">/Jasper/printReport.jasper</param>
+                <param name="dataSource">printReportList</param>
+                <param name="format">PDF</param>
+            </result>
+        </action>
+      
+        <action name="toPrintChuFangpdf" class="com.jujie.global.action.ChuFangReportAction">
+            <result name="success" type="jasper">
+                <param name="location">/Jasper/chufang.jasper</param>
+                <param name="dataSource">chuFangReportPdfList</param>
+                <param name="format">PDF</param>
+            </result>
+        </action>
+        
+         <!-- 
+        <action name="toJSpdf" class="com.jujie.his.medicare.action.CitizenMedAction">
+            <result name="success" type="jasper">
+                <param name="location">/Jasper/jumin002.jasper</param>
+                <param name="dataSource">citizenMedList</param>
+                <param name="format">PDF</param>
+                <param name="reportParameters">map</param>
+            </result>
+        </action>
+        
+        <action name="to205pdf" class="com.jujie.his.medicare.action.CitizenMedAction">
+            <result name="success" type="jasper">
+                <param name="location">/Jasper/205.jasper</param>
+                <param name="dataSource">citizenMedList</param>
+                <param name="format">PDF</param>
+                <param name="reportParameters">map</param>
+            </result>
+        </action>
+        <action name="toXls" class="com.jujie.his.medicare.action.CitizenMedAction">
+            <result type="jasper">
+                <param name="location">/Jasper/demoReport.jasper</param>
+                <param name="dataSource">staffList</param>
+                <param name="format">XLS</param>
+                <param name="reportParameters">map</param>
+            </result>
+        </action> 
+        <action name="toChar" class="com.jujie.his.medicare.action.CitizenMedAction">
+            <result type="jasper">
+                <param name="location">/Jasper/charReport.jasper</param>
+                <param name="dataSource">comList</param>
+                <param name="format">PDF</param>
+        		<param name="reportParameters">map</param>
+            </result>
+        </action> -->
+
+	</package>
+	
+     
+</struts>
+
+

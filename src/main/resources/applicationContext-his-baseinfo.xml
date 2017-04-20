@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="deptDAO" parent="springJdbcDs" class="com.jujie.his.baseinfo.dao.DeptDaoImpl" />
+	<bean id="doctorDAO" parent="springJdbcDs" class="com.jujie.his.baseinfo.dao.DoctorDaoImpl" />
+	<bean id="unitDAO" parent="springJdbcDs" class="com.jujie.his.baseinfo.dao.UnitDaoImpl" />
+	<bean id="standardDAO" parent="springJdbcDs" class="com.jujie.his.baseinfo.dao.StandardDaoImpl" />
+	<bean id="houseDAO" parent="springJdbcDs" class="com.jujie.his.baseinfo.dao.HouseDaoImpl" />
+	<bean id="companyDAO" parent="springJdbcDs" class="com.jujie.his.baseinfo.dao.CompanyDaoImpl" />
+	<bean id="medicinalDAO" parent="springJdbcDs" class="com.jujie.his.baseinfo.dao.MedicinalDaoImpl" />
+	
+	<bean id="baseInfoServer" class="com.jujie.his.baseinfo.server.BaseInfoServerImpl" >
+		<property name="deptDAO" ref="deptDAO"></property>
+		<property name="doctorDAO" ref="doctorDAO"></property>
+		<property name="unitDAO" ref="unitDAO"></property>
+		<property name="standardDAO" ref="standardDAO"></property>
+		<property name="houseDAO" ref="houseDAO"></property>
+		<property name="companyDAO" ref="companyDAO"></property>
+		<property name="medicinalDAO" ref="medicinalDAO"></property>
+	</bean>
+
+</beans>

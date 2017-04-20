@@ -1,0 +1,39 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+     <package name="baseinfoPackage" namespace="/baseinfo" extends="struts-global">  
+        <action name="deptAction" class="com.jujie.his.baseinfo.action.DeptAction">
+        	<result name="dept">/his/baseinfo/dept.jsp</result>
+		</action>
+		
+		<action name="doctorAction" class="com.jujie.his.baseinfo.action.DoctorAction">
+        	<result name="doctor">/his/baseinfo/doctor.jsp</result>
+		</action>
+		
+		<action name="unitAction" class="com.jujie.his.baseinfo.action.UnitAction">
+        	<result name="unit">/his/baseinfo/unit.jsp</result>
+		</action>
+		
+		<action name="standardAction" class="com.jujie.his.baseinfo.action.StandardAction">
+        	<result name="standard">/his/baseinfo/standard.jsp</result>
+		</action>
+		
+		<action name="houseAction" class="com.jujie.his.baseinfo.action.HouseAction">
+        	<result name="house">/his/baseinfo/house.jsp</result>
+		</action>
+		
+		<action name="companyAction" class="com.jujie.his.baseinfo.action.CompanyAction">
+        	<result name="company">/his/baseinfo/company.jsp</result>
+		</action>
+		
+		<action name="medicinalAction" class="com.jujie.his.baseinfo.action.MedicinalAction">
+        	<result name="medicinal">/his/baseinfo/medicinal.jsp</result>
+		</action>
+        
+ 
+     </package>  
+</struts>
+
+
